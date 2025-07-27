@@ -1,0 +1,50 @@
+<div class="hero-section">
+    <div class="hero-image">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Our Studio!</h1>
+                <p class="hero-subtitle">It's Nice To Meet You</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" routerLink="/gallery">View Portfolio</button>
+                    <button class="btn btn-outline-light btn-lg" routerLink="/services">Book Session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card" (click)="navigateToGallery('wedding')">
+                    <div class="feature-icon">💒</div>
+                    <h3>Wedding</h3>
+                    <p>Capture your special day with our professional wedding photography services that tell your unique love story.</p>
+                    <div class="card-overlay">
+                        <span class="view-more">View Gallery →</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card" (click)="navigateToGallery('pre-wedding')">
+                    <div class="feature-icon">💕</div>
+                    <h3>Pre-Wedding</h3>
+                    <p>Beautiful pre-wedding shoots that capture the excitement and romance leading up to your big day.</p>
+                    <div class="card-overlay">
+                        <span class="view-more">View Gallery →</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card" (click)="navigateToGallery('corporate')">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Corporate Event</h3>
+                    <p>Professional corporate event photography that showcases your business milestones and achievements.</p>
+                    <div class="card-overlay">
+                        <span class="view-more">View Gallery →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

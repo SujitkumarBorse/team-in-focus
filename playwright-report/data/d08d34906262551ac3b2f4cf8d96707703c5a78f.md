@@ -1,0 +1,72 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - img "Camera Icon"
+    - link "Team InFocus":
+      - /url: /home
+    - link "Home":
+      - /url: /home
+    - link "Gallery":
+      - /url: /gallery
+    - link "Services":
+      - /url: /services
+    - link "About":
+      - /url: /about
+    - link "Team":
+      - /url: /team
+    - link "Contact":
+      - /url: /contact
+- main:
+  - heading "About PhotoFocus" [level=1]
+  - paragraph: Capturing life's precious moments through the lens of creativity and passion
+  - text: 10+ Years Experience 100+ Projects Completed 100% Client Satisfaction
+  - heading "Our Story" [level=2]
+  - paragraph: Capturing memories, one frame at a time
+  - heading "Who We Are" [level=3]
+  - paragraph: PhotoFocus is a passionate photography studio dedicated to capturing life's most precious moments. Founded with a vision to preserve memories through artistic and professional photography, we've been at the forefront of creative visual storytelling that celebrates life's beautiful moments.
+  - heading "Our Journey" [level=3]
+  - paragraph: Starting as a small photography studio with big dreams, we've grown into a trusted partner for families, couples, and businesses seeking to capture their most important moments. Our journey has been marked by continuous artistic growth, technical innovation, and an unwavering commitment to creating timeless images.
+  - text: 🏆
+  - heading "Industry Recognition" [level=4]
+  - paragraph: Multiple awards for artistic excellence
+  - text: 📸
+  - heading "Thousands of Moments" [level=4]
+  - paragraph: Captured over 10,000+ precious memories
+  - text: 💝
+  - heading "Client Satisfaction" [level=4]
+  - paragraph: Creating lasting relationships through art
+  - text: 📷
+  - paragraph: Our Photography Journey
+  - text: 📷
+  - heading "Our Mission" [level=3]
+  - paragraph: To capture life's most precious moments with artistic excellence, creating timeless images that tell beautiful stories and preserve memories for generations to come.
+  - text: ✨
+  - heading "Our Vision" [level=3]
+  - paragraph: To be the premier photography studio that transforms ordinary moments into extraordinary memories, creating a legacy of beautiful images that celebrate life's journey.
+  - heading "Our Core Values" [level=2]
+  - paragraph: The principles that guide our artistic vision
+  - text: 📷
+  - heading "Artistic Excellence" [level=4]
+  - paragraph: We believe in creating images that are not just photographs, but works of art that capture the essence and emotion of every moment.
+  - text: 💝
+  - heading "Passion" [level=4]
+  - paragraph: We approach every shoot with genuine passion and enthusiasm, ensuring that our love for photography shines through in every image we create.
+  - text: ✨
+  - heading "Creativity" [level=4]
+  - paragraph: We embrace artistic innovation and continuously explore new techniques to create unique and memorable visual experiences.
+  - text: 🤝
+  - heading "Trust" [level=4]
+  - paragraph: We build lasting relationships with our clients through honesty, transparency, and a commitment to delivering beyond expectations.
+  - text: 🌅
+  - heading "Timeless Beauty" [level=4]
+  - paragraph: We're committed to creating images that will remain beautiful and meaningful for generations to come.
+  - text: 🎨
+  - heading "Continuous Growth" [level=4]
+  - paragraph: We foster a culture of artistic development, constantly learning and evolving our craft to deliver the best possible results.
+  - heading "Ready to Capture Your Moments?" [level=2]
+  - paragraph: Join hundreds of families who have already experienced the PhotoFocus difference.
+  - button "Get Started Today"
+  - button "Learn More"
+```

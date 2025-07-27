@@ -1,0 +1,100 @@
+<div class="contact-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">Ready to capture your special moments? Let's start a conversation about how we can help you
+                create beautiful memories that last forever.</p>
+        </div>
+    </section>
+    <!-- Contact Information & Map Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-map-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-container">
+                    <div class="info-header">
+                        <h2>Contact Information</h2>
+                        <p>Get in touch with us through any of these channels.</p>
+                    </div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <span class="icon">📍</span>
+                            </div>
+                            <div class="method-content">
+                                <h4>Office Address</h4>
+                                <p>Shop No. 2, Vijay Residency<br>Near Talathi Office, Tathawde Road<br>Punawale, Pune, Pimpri-Chinchwad<br>Maharashtra - 411033, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <span class="icon">📧</span>
+                            </div>
+                            <div class="method-content">
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:teaminfocus03@gmail.com">{{emailID1}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <span class="icon">📞</span>
+                            </div>
+                            <div class="method-content">
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+919767728709">+91 9767728709</a></p>
+                                <p class="hours">Mon-Sat: 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map Section -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <span class="map-icon">🗺️</span>
+                            <h3>Our Location</h3>
+                            <p>Visit us at our headquarters in Tech Valley</p>
+                            <button class="directions-btn" (click)="getDirections()">Get Directions</button>
+                        </div>
+                    </div>
+                    <!-- Follow Us Section -->
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.youtube.com/@teaminfocus1904" class="social-icon" title="YouTube" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/team_infocus_official?igsh=MWN6bXRhemhvYm10ZQ==" class="social-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/153f4hxECa/" class="social-icon" title="Facebook" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+                    <div class="faq-question" (click)="toggleFAQ(i)">
+                        <h4>{{ faq.question }}</h4>
+                        <span class="faq-toggle" [class.active]="faq.isOpen">+</span>
+                    </div>
+                    <div class="faq-answer" [class.open]="faq.isOpen">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

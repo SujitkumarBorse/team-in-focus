@@ -1,0 +1,275 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Global scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure body starts at top */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Global responsive styles and CSS reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Responsive typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+h6 {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+}
+
+p {
+    margin: 0 0 1rem 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive containers */
+.container-fluid {
+    padding-left: clamp(10px, 3vw, 15px);
+    padding-right: clamp(10px, 3vw, 15px);
+}
+
+/* Responsive spacing utilities */
+.responsive-padding {
+    padding: clamp(1rem, 3vw, 3rem);
+}
+
+.responsive-margin {
+    margin: clamp(1rem, 3vw, 3rem);
+}
+
+/* Responsive grid improvements */
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+@media (min-width: 576px) {
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.col,
+[class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 576px) {
+
+    .col,
+    [class*="col-"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Responsive button sizing */
+.btn {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+    min-height: 44px; // Touch target size
+    min-width: 44px;
+}
+
+/* Responsive form elements */
+.form-control {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 0.75rem);
+    min-height: 44px; // Touch target size
+}
+
+/* Responsive navigation improvements */
+.navbar {
+    padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+/* Responsive card improvements */
+.card {
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Responsive table improvements */
+.table-responsive {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Responsive modal improvements */
+.modal-dialog {
+    margin: clamp(0.5rem, 3vw, 1.75rem) auto;
+}
+
+/* Responsive tooltip and popover */
+.tooltip,
+.popover {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+/* Enhanced responsive utilities */
+.responsive-text {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.responsive-heading {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.responsive-container {
+    max-width: clamp(300px, 90vw, 1200px);
+    margin: 0 auto;
+    padding: 0 clamp(15px, 3vw, 30px);
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 80vw, 300px), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Touch-friendly interactive elements */
+button,
+.btn,
+.nav-link,
+.social-link,
+.card,
+.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:focus {
+        outline: 2px solid #007bff;
+        outline-offset: 2px;
+    }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .col,
+    [class*="col-"] {
+        padding: 0;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Dark mode support - RESTORED for beautiful UI */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+
+    .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+
+    .form-control {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: #ffffff;
+    }
+}

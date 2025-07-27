@@ -1,0 +1,169 @@
+// Global responsive container
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+// Header styling
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    background: transparent;
+}
+
+// Main content area
+.app-main {
+    flex: 1;
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+// Responsive breakpoints for different devices
+
+// Extra Small devices (phones, 576px and down)
+@media (max-width: 575.98px) {
+    .app-main {
+        margin-top: 55px;
+        min-height: calc(100vh - 55px);
+    }
+
+    .content-wrapper {
+        padding: 0 10px;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .app-main {
+        margin-top: 60px;
+        min-height: calc(100vh - 60px);
+    }
+
+    .content-wrapper {
+        padding: 0 15px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .app-main {
+        margin-top: 65px;
+        min-height: calc(100vh - 65px);
+    }
+
+    .content-wrapper {
+        padding: 0 20px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .app-main {
+        margin-top: 70px;
+        min-height: calc(100vh - 70px);
+    }
+
+    .content-wrapper {
+        padding: 0 30px;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .app-main {
+        margin-top: 75px;
+        min-height: calc(100vh - 75px);
+    }
+
+    .content-wrapper {
+        padding: 0 40px;
+        max-width: 1400px;
+    }
+}
+
+// Ultra-wide screens (1400px and up)
+@media (min-width: 1400px) {
+    .content-wrapper {
+        max-width: 1600px;
+        padding: 0 50px;
+    }
+}
+
+// Landscape orientation adjustments for mobile
+@media (max-width: 767.98px) and (orientation: landscape) {
+    .app-main {
+        margin-top: 45px;
+        min-height: calc(100vh - 45px);
+    }
+}
+
+// High DPI displays
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .app-container {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+// Print styles
+@media print {
+    .app-header {
+        position: static;
+    }
+
+    .app-main {
+        margin-top: 0;
+    }
+
+    .content-wrapper {
+        padding: 0;
+    }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+    .app-container * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+// Dark mode support - RESTORED for beautiful UI
+@media (prefers-color-scheme: dark) {
+    .app-container {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+}
+
+// Focus management for keyboard navigation
+.app-container:focus-within {
+    outline: none;
+}
+
+// Ensure proper stacking context
+.app-header {
+    transform: translateZ(0);
+}
+
+.app-main {
+    transform: translateZ(0);
+}

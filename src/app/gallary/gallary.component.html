@@ -1,0 +1,180 @@
+<div class="gallery-container">
+    <!-- Gallery Header -->
+    <div class="gallery-header">
+        <div class="container">
+            <h1 class="gallery-title">Our Photography Portfolio</h1>
+            <p class="gallery-subtitle">Explore our diverse collection of stunning photographs</p>
+        </div>
+    </div>
+    <!-- Loading State -->
+    <div class="loading-container" *ngIf="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading gallery...</p>
+    </div>
+    <!-- Gallery Tabs -->
+    <div class="gallery-tabs-section" *ngIf="!loading">
+        <div class="container">
+            <div class="gallery-tabs">
+                <button class="tab-button" [class.active]="activeTab === 'wedding'" (click)="setActiveTab('wedding')">
+                    <span class="tab-icon">💒</span>
+                    Wedding
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'pre-wedding'" (click)="setActiveTab('pre-wedding')">
+                    <span class="tab-icon">💕</span>
+                    Pre-Wedding
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'engagement'" (click)="setActiveTab('engagement')">
+                    <span class="tab-icon">💍</span>
+                    Engagement
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'new-born'" (click)="setActiveTab('new-born')">
+                    <span class="tab-icon">👶</span>
+                    New Born Baby
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'corporate'" (click)="setActiveTab('corporate')">
+                    <span class="tab-icon">🏢</span>
+                    Corporate Event
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'maternity'" (click)="setActiveTab('maternity')">
+                    <span class="tab-icon">🤱</span>
+                    Maternity
+                </button>
+                <button class="tab-button" [class.active]="activeTab === 'birthday'" (click)="setActiveTab('birthday')">
+                    <span class="tab-icon">🎂</span>
+                    Birthday
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Content -->
+    <div class="gallery-content" *ngIf="!loading">
+        <div class="container">
+            <!-- Wedding Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'wedding'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of weddingImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Wedding photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pre-Wedding Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'pre-wedding'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of preWeddingImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Pre-wedding photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Engagement Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'engagement'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of engagementImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Engagement photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- New Born Baby Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'new-born'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of newBornImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Newborn photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Corporate Event Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'corporate'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of corporateImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Corporate event photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Maternity Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'maternity'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of maternityImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Maternity photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Birthday Tab Content -->
+            <div class="tab-content" [class.active]="activeTab === 'birthday'">
+                <div class="gallery-grid">
+                    <div class="gallery-item" *ngFor="let item of birthdayImages; let i = index">
+                        <div class="image-container">
+                            <div class="image-placeholder" *ngIf="!item.loaded && !item.error">
+                                <div class="placeholder-spinner"></div>
+                                <p>Loading...</p>
+                            </div>
+                            <div class="error-placeholder" *ngIf="item.error">
+                                <span class="error-icon">⚠️</span>
+                                <p>Image unavailable</p>
+                            </div>
+                            <img [src]="item.src" loading="lazy" (error)="onImageError($event, item)" (load)="onImageLoad($event, item)" [class.loaded]="item.loaded" [class.error]="item.error" alt="Birthday photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
