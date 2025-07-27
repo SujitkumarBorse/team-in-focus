@@ -32,7 +32,28 @@ Visit: [Your Custom Domain Here]
 
 ## Deployment
 
-This project uses GitHub Actions for automatic deployment to GitHub Pages.
+This project is configured for deployment to GitHub Pages with automatic CI/CD.
+
+### Automatic Deployment (Recommended)
+
+The project uses GitHub Actions for automatic deployment. Every push to the main/master branch triggers a build and deployment.
+
+### Manual Deployment
+
+1. Build for GitHub Pages: `npm run build:github-pages`
+2. Deploy: `npm run deploy`
+
+### Setup GitHub Pages
+
+1. Go to your GitHub repository
+2. Navigate to **Settings** > **Pages**
+3. Under **Source**, select **Deploy from a branch**
+4. Choose the **gh-pages** branch and **/(root)** folder
+5. Click **Save**
+
+Your site will be available at: `https://[your-username].github.io/teamInFocus/`
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Custom Domain Setup
 

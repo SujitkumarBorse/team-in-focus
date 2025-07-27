@@ -61,6 +61,22 @@
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
+                        },
+                        "github-pages": {
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "1MB",
+                                    "maximumError": "2MB"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "15kB",
+                                    "maximumError": "20kB"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "outputMode": "static",
+                            "baseHref": "/teamInFocus/"
                         }
                     },
                     "defaultConfiguration": "production"
