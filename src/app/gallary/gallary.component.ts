@@ -39,24 +39,24 @@ export class GallaryComponent implements OnInit {
   }
 
   loadGalleryData(): void {
-    console.log('Loading gallery data...');
+    // console.log('Loading gallery data...');
     this.galleryService.getGalleryData()
       .subscribe({
         next: (data) => {
-          console.log('Gallery data loaded successfully:', data);
+          // console.log('Gallery data loaded successfully:', data);
           this.galleryData = data;
           this.loading = false;
           
           // Log some sample URLs for debugging
           Object.keys(data).forEach(category => {
             if (data[category] && data[category].length > 0) {
-              console.log(`${category} category has ${data[category].length} images`);
-              console.log('Sample URL:', data[category][0].src);
+              // console.log(`${category} category has ${data[category].length} images`);
+              // console.log('Sample URL:', data[category][0].src);
             }
           });
         },
         error: (error) => {
-          console.error('Error loading gallery data:', error);
+          // console.error('Error loading gallery data:', error);
           this.loading = false;
         }
       });
@@ -109,7 +109,7 @@ export class GallaryComponent implements OnInit {
   // Handle image loading errors with retry logic
   onImageError(event: any, item: GalleryImage): void {
     const img = event.target;
-    console.error('Image failed to load:', img.src, 'Original:', item.originalSrc);
+    // console.error('Image failed to load:', img.src, 'Original:', item.originalSrc);
     
     // Increment retry count
     item.retryCount = (item.retryCount || 0) + 1;
@@ -117,11 +117,11 @@ export class GallaryComponent implements OnInit {
     
     // Try alternative URL if we haven't exceeded max retries
     if (item.retryCount <= 3 && item.originalSrc) {
-      console.log(`Retrying image (attempt ${item.retryCount}):`, item.originalSrc);
+      // console.log(`Retrying image (attempt ${item.retryCount}):`, item.originalSrc);
       
       // Get alternative URL
       const newSrc = this.galleryService.getAlternativeUrl(item.originalSrc, item.retryCount - 1);
-      console.log('New source URL:', newSrc);
+      // console.log('New source URL:', newSrc);
       item.src = newSrc;
       item.error = false;
       
@@ -131,7 +131,7 @@ export class GallaryComponent implements OnInit {
       }, 1000 * item.retryCount); // Exponential backoff
     } else {
       // Max retries exceeded, show error state
-      console.error('Max retries exceeded for image:', item.originalSrc);
+      // console.error('Max retries exceeded for image:', item.originalSrc);
       item.error = true;
       
       // Hide the image
@@ -154,7 +154,7 @@ export class GallaryComponent implements OnInit {
 
   // Handle image load success
   onImageLoad(event: any, item: GalleryImage): void {
-    console.log('Image loaded successfully:', item.src);
+    // console.log('Image loaded successfully:', item.src);
     item.loaded = true;
     item.error = false;
     

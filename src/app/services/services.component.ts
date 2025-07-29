@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-services',
@@ -11,7 +12,10 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     // Scroll to top when component loads (only in browser)
@@ -23,8 +27,9 @@ export class ServicesComponent implements OnInit {
   // Method to handle CTA buttons
   handleCTA(action: string) {
     switch(action) {
-      case 'quote':
-        alert('Please contact us for a custom quote!');
+      case 'contact':
+        // Navigate to contact page
+        this.router.navigate(['/contact']);
         break;
       case 'portfolio':
         // Navigate to gallery page (only in browser)
