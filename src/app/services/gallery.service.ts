@@ -25,7 +25,7 @@ export class GalleryService {
    * Get gallery data from gallery-data.json
    */
   getGalleryData(): Observable<any> {
-    return this.http.get<any>('/gallery-data.json').pipe(
+    return this.http.get<any>('gallery-data.json').pipe(
       timeout(this.REQUEST_TIMEOUT),
       map(data => {
         // Process the data from gallery-data.json
