@@ -143,6 +143,10 @@
         gap: 0.5rem;
         border-radius: 15px;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .nav-link {
@@ -151,6 +155,13 @@
         margin-bottom: 0.5rem;
         border-radius: 25px;
         font-size: 0.9rem;
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
     }
 
     .navbar-brand {
@@ -171,10 +182,35 @@
         font-size: 0.8rem;
         padding: 0.8rem 1.2rem !important;
         letter-spacing: 0.5px;
+        width: 180px;
+        max-width: 180px;
+        min-width: 180px;
     }
 
     .navbar-nav {
         padding: 0.8rem;
+    }
+}
+
+// Extra small devices
+@media (max-width: 480px) {
+    .nav-link {
+        width: 160px;
+        max-width: 160px;
+        min-width: 160px;
+        font-size: 0.75rem;
+        padding: 0.7rem 1rem !important;
+    }
+}
+
+// Very small devices
+@media (max-width: 375px) {
+    .nav-link {
+        width: 140px;
+        max-width: 140px;
+        min-width: 140px;
+        font-size: 0.7rem;
+        padding: 0.6rem 0.8rem !important;
     }
 }
 

@@ -116,7 +116,8 @@
     -ms-overflow-style: none;
     /* IE and Edge */
     white-space: nowrap;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gallery-tabs::-webkit-scrollbar {
@@ -140,6 +141,7 @@
     overflow: hidden;
     flex-shrink: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .tab-button::before {
@@ -186,11 +188,14 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
     max-width: 100%;
     text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2;
+    padding: 0 2px;
 }
 
 // Gallery Content
@@ -356,17 +361,23 @@
     }
 
     .gallery-tabs {
-        gap: 0.4rem;
-        padding: 6px 10px;
+        gap: 0.5rem;
+        padding: 8px 10px;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch;
     }
 
     .tab-button {
-        min-width: 100px;
-        max-width: 100px;
-        padding: 0.6rem 0.6rem;
+        min-width: 110px;
+        max-width: 110px;
+        padding: 0.6rem 0.4rem;
         margin-bottom: 0.5rem;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .tab-icon {
@@ -375,7 +386,13 @@
     }
 
     .tab-button span:not(.tab-icon) {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        white-space: normal;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
 
     .gallery-grid {
@@ -397,31 +414,53 @@
 // Very Small devices (phones, 375px and up) - iPhone SE, etc.
 @media (min-width: 375px) and (max-width: 575.98px) {
     .gallery-tabs {
-        gap: 0.5rem;
+        gap: 0.6rem;
         padding: 8px 12px;
     }
 
     .tab-button {
-        min-width: 105px;
-        max-width: 105px;
-        padding: 0.7rem 0.7rem;
+        min-width: 115px;
+        max-width: 115px;
+        padding: 0.7rem 0.5rem;
+    }
+
+    .tab-button span:not(.tab-icon) {
+        font-size: 0.65rem;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
     .gallery-tabs {
-        gap: 0.5rem;
-        padding: 6px 15px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        gap: 0.6rem;
+        padding: 8px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
     }
 
     .tab-button {
-        min-width: 105px;
-        max-width: 105px;
-        padding: 0.7rem 0.9rem;
-        flex-shrink: 0;
+        min-width: 120px;
+        max-width: 120px;
+        padding: 0.7rem 0.6rem;
+        margin-bottom: 0.5rem;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tab-button span:not(.tab-icon) {
+        font-size: 0.7rem;
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        white-space: normal;
+        padding: 0 4px;
+        box-sizing: border-box;
     }
 
     .gallery-grid {
@@ -583,8 +622,8 @@
     }
 
     .tab-button {
-        min-width: 90px;
-        max-width: 90px;
+        min-width: 110px;
+        max-width: 110px;
         padding: 0.5rem 0.5rem;
         flex-shrink: 0;
     }
@@ -623,17 +662,23 @@
 // Foldable devices support
 @media (min-width: 280px) and (max-width: 319px) {
     .gallery-tabs {
-        gap: 0.3rem;
-        padding: 4px 8px;
+        gap: 0.4rem;
+        padding: 6px 8px;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch;
     }
 
     .tab-button {
-        min-width: 85px;
-        max-width: 85px;
-        padding: 0.5rem 0.4rem;
+        min-width: 100px;
+        max-width: 100px;
+        padding: 0.5rem 0.3rem;
         margin-bottom: 0.4rem;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .tab-icon {
@@ -642,7 +687,13 @@
     }
 
     .tab-button span:not(.tab-icon) {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
+        text-align: center;
+        line-height: 1.1;
+        word-wrap: break-word;
+        white-space: normal;
+        padding: 0 3px;
+        box-sizing: border-box;
     }
 
     .gallery-grid {

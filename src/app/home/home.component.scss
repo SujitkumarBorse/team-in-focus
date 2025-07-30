@@ -230,6 +230,9 @@
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
     transition: all 0.3s ease;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 120px;
 }
 
 .feature-card:hover .view-more {
@@ -277,6 +280,16 @@
     .card-overlay {
         transform: translateY(0);
         background: linear-gradient(transparent, rgba(102, 126, 234, 0.05));
+        padding: 15px 10px;
+        position: relative;
+        bottom: auto;
+        margin-top: 15px;
+    }
+
+    .view-more {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        min-width: 100px;
     }
 }
 
@@ -308,6 +321,16 @@
     .feature-card h3 {
         font-size: 1.3rem;
     }
+
+    .card-overlay {
+        padding: 12px 8px;
+    }
+
+    .view-more {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+        min-width: 90px;
+    }
 }
 
 // Touch device optimizations
@@ -331,5 +354,15 @@
     .card-overlay {
         transform: translateY(0);
         background: linear-gradient(transparent, rgba(102, 126, 234, 0.05));
+        padding: 15px 10px;
+        position: relative;
+        bottom: auto;
+        margin-top: 15px;
+    }
+
+    .view-more {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        min-width: 100px;
     }
 }
