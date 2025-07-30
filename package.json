@@ -5,6 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build:gh-pages": "ng build --base-href=/teamInFocus/",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "e2e": "playwright test",
@@ -12,7 +13,7 @@
         "e2e:headed": "playwright test --headed",
         "e2e:debug": "playwright test --debug",
         "e2e:report": "playwright show-report",
-        "serve:ssr:teamInFocus": "node dist/team-in-focus/server/server.mjs"
+        "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/team-in-focus"
     },
     "private": true,
     "dependencies": {
