@@ -14,7 +14,7 @@ A beautiful, responsive photography portfolio website built with Angular.
 
 ## Tech Stack
 
-- **Frontend**: Angular 17
+- **Frontend**: Angular 19.2
 - **Styling**: SCSS with Bootstrap
 - **Image Hosting**: Google Drive + Unsplash
 - **Deployment**: GitHub Pages
