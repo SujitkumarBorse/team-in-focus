@@ -13,7 +13,7 @@
         "e2e:headed": "playwright test --headed",
         "e2e:debug": "playwright test --debug",
         "e2e:report": "playwright show-report",
-        "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/team-in-focus"
+        "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/team-in-focus/browser"
     },
     "private": true,
     "dependencies": {
