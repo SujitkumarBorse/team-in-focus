@@ -28,6 +28,19 @@ try {
         stdio: 'inherit'
     });
 
+    // Copy 404.html to the build output for GitHub Pages routing
+    console.log('📋 Copying 404.html for GitHub Pages routing...');
+    const buildPath = path.join(__dirname, 'dist', 'team-in-focus', 'browser');
+    const source404Path = path.join(__dirname, 'public', '404.html');
+    const dest404Path = path.join(buildPath, '404.html');
+
+    if (fs.existsSync(source404Path)) {
+        fs.copyFileSync(source404Path, dest404Path);
+        console.log('✅ 404.html copied successfully');
+    } else {
+        console.log('⚠️ 404.html not found in public directory');
+    }
+
     console.log('🚀 Deploying to GitHub Pages...');
     execSync('npx angular-cli-ghpages --dir=dist/team-in-focus/browser', {
         stdio: 'inherit'

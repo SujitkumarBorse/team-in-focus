@@ -170,7 +170,7 @@ jobs:
 ```
 teamInFocus/
 ├── src/
-│   ├── index.html                 # Main HTML file (base href management)
+│   ├── index.html                 # Main HTML file (base href management + routing fix)
 │   ├── app/
 │   │   ├── header/
 │   │   │   └── header.component.html  # Camera icon path
@@ -178,7 +178,8 @@ teamInFocus/
 │   │       └── gallery.service.ts     # Gallery data path
 ├── public/
 │   ├── camera-icon.png           # Camera icon asset
-│   └── gallery-data.json         # Gallery data
+│   ├── gallery-data.json         # Gallery data
+│   └── 404.html                  # GitHub Pages routing fix
 ├── angular.json                  # Angular CLI configuration
 ├── package.json                  # Dependencies and scripts
 ├── deploy.js                     # Smart deployment script
@@ -233,20 +234,27 @@ teamInFocus/
 - Ensure `deploy.js` is running correctly
 - Verify asset paths are relative
 
-#### 2. Camera Icon Not Displaying
+#### 2. 404 Error on Direct Route Access
+**Problem**: Routes like `/home`, `/contact` return 404 when accessed directly
+**Solution**: 
+- Ensure `public/404.html` exists and is copied during deployment
+- Verify routing script is present in `src/index.html`
+- Check that `deploy.js` includes the 404.html copy step
+
+#### 3. Camera Icon Not Displaying
 **Problem**: Icon path incorrect
 **Solution**:
 - Use relative path: `src="camera-icon.png"`
 - Ensure file exists in `public/` directory
 
-#### 3. Gallery Images Not Loading
+#### 4. Gallery Images Not Loading
 **Problem**: Gallery data not found
 **Solution**:
 - Use relative path: `gallery-data.json`
 - Check JSON file structure
 - Verify image URLs are valid
 
-#### 4. Build Errors
+#### 5. Build Errors
 **Problem**: TypeScript or dependency issues
 **Solution**:
 ```bash
@@ -254,7 +262,7 @@ npm install
 npm run build:local
 ```
 
-#### 5. Deployment Fails
+#### 6. Deployment Fails
 **Problem**: GitHub Pages deployment issues
 **Solution**:
 ```bash
